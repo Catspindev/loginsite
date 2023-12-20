@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="Login">
+    </form>
+
+    <h2>Register</h2>
+    <form action="/register" method="post">
+        <label for="regUsername">Username:</label>
+        <input type="text" id="regUsername" name="username" required><br><br>
+
+        <label for="regPassword">Password:</label>
+        <input type="password" id="regPassword" name="password" required><br><br>
+
+        <label for="userLink">Your Link:</label>
+        <input type="text" id="userLink" name="userLink" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
