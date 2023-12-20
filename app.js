@@ -63,8 +63,13 @@ app.get('/private/:username', (req, res) => {
             const [storedUsername, storedPassword, userLink] = line.split(':');
             
             if (username === storedUsername) {
-                // Authentication successful
-                return res.send(`Welcome to the private page, ${username}! Your link: ${userLink}`);
+                if (userLink.trim() === '') {
+                    // User doesn't have a link, provide a specific message
+                    return res.send(`Welcome to the private page, ${username}! Contact an admin to claim your VPS.`);
+                } else {
+                    // User has a link, include it in the response
+                    return res.send(`Welcome to the private page, ${username}! Your link: ${userLink}`);
+                }
             }
         }
 
